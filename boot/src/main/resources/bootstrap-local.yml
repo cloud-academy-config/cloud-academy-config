@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+aws:
+  kms:
+    keyId: <INPUT_DEV_KMS_ID>
+    encryptionAlgorithm: "RSAES_OAEP_SHA_256"
+    region: ap-northeast-2
+
+# usesrname은 각 서비스 별로 선정하여 설정.
+# password 는 발급된 aws kms key id 를 사용하여 복호화 한뒤 셋팅.
+spring:
+  application:
+#    name: user-service
+    name: <INPUT_APP_NAME>
+  cloud:
+    config:
+      uri: http://<INPUT_DEV_CONFIG_ALB_DNS>:8037
+      username: client
+      password: 1234 # 초기 비밀번호 신규 설정 후 복호화 값 입력 ex : '{cipher}awBWiE2I=......'
