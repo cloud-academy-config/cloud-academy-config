@@ -3,7 +3,7 @@ server:
 
 aws:
   kms:
-    keyId: <INPUT_DEV_KMS_ID>
+    keyId: 0b56deb2-17d8-4624-9972-6a680cecabd1
     encryptionAlgorithm: "RSAES_OAEP_SHA_256"
     region: ap-northeast-2
 
@@ -11,11 +11,11 @@ aws:
 # password 는 발급된 aws kms key id 를 사용하여 복호화 한뒤 셋팅.
 spring:
   application:
-    name: <INPUT_APP_NAME>
+    name: cloud-academy-config
 #    name: user-service
 
   cloud:
     config:
-      uri: http://<INPUT_DEV_CONFIG_ALB_DNS>:8037
+      uri: http://internal-albdev-cloud-academy-config-893340959.ap-northeast-2.elb.amazonaws.com:8037
       username: client
       password: 1234 # 초기 비밀번호 신규 설정 후 복호화 값 입력 ex : '{cipher}awBWiE2I=......'

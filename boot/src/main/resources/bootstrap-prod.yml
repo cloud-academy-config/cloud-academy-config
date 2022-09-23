@@ -11,7 +11,7 @@ aws:
 # password 는 발급된 aws kms key id 를 사용하여 복호화 한뒤 셋팅.
 spring:
   application:
-    name: <INPUT_APP_NAME>
+    name: cloud-academy-config
 #    name: user-service
 
   cloud:
