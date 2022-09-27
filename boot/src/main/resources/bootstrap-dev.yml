@@ -16,6 +16,6 @@ spring:
 
   cloud:
     config:
-      uri: http://internal-albdev-cloud-academy-config-893340959.ap-northeast-2.elb.amazonaws.com:8037
+      uri: http://localhost:8037
       username: client
       password: 1234 # 초기 비밀번호 신규 설정 후 복호화 값 입력 ex : '{cipher}awBWiE2I=......'
